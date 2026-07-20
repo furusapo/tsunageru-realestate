@@ -18,4 +18,4 @@ const server=http.createServer((req,res)=>{
   if(!full.startsWith(PUBLIC)||!fs.existsSync(full)||fs.statSync(full).isDirectory())return send(res,404,'Not found','text/plain; charset=utf-8');
   send(res,200,fs.readFileSync(full),types[path.extname(full)]||'application/octet-stream');
 });
-server.listen(3220,()=>console.log('\n✅ Tsunageru不動産査定 起動完了\n🌐 サイト: http://localhost:3210\n📋 管理画面: http://localhost:3210/admin.html\n'));
+server.listen(3210,()=>console.log('\n✅ Tsunageru不動産査定 起動完了\n🌐 サイト: http://localhost:3210\n📋 管理画面: http://localhost:3210/admin.html\n'));
