@@ -1,5 +1,5 @@
 const http=require('http'),fs=require('fs'),path=require('path'),crypto=require('crypto');
-const ROOT=__dirname,PUBLIC=path.join(ROOT,'public'),DB=path.join(ROOT,'requests.json');
+const ROOT=__dirname,PUBLIC=path.join(ROOT,'docs'),DB=path.join(ROOT,'requests.json');
 const types={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.svg':'image/svg+xml','.json':'application/json; charset=utf-8'};
 function read(){try{return JSON.parse(fs.readFileSync(DB,'utf8'))}catch{return[]}}
 function send(res,n,data,type='application/json; charset=utf-8'){res.writeHead(n,{'Content-Type':type,'Cache-Control':'no-store'});res.end(type.startsWith('application/json')?JSON.stringify(data):data)}
